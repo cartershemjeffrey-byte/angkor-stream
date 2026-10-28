@@ -1,4 +1,3 @@
-
 {
   "name": "angkor-stream",
   "version": "1.0.0",
@@ -11,5 +10,8 @@
   },
   "devDependencies": {
     "vite": "latest"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.118.0"
   }
 }

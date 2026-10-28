@@ -746,3 +746,1266 @@ footer .brand-mark {
     transition-duration: .01ms !important;
   }
 }
+
+/* ===== ANGKOR STREAM AUTHENTICATION ===== */
+
+.auth-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.auth-button {
+  min-height: 38px;
+  padding: 0 15px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 5px;
+  color: #f4f5f0;
+  background: #111512;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.auth-button:hover {
+  border-color: #319b68;
+}
+
+.auth-button.signup {
+  color: #07110b;
+  background: #319b68;
+  border-color: #319b68;
+}
+
+.auth-button.signup:hover {
+  background: #45b47c;
+}
+
+.auth-overlay {
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.78);
+  backdrop-filter: blur(9px);
+}
+
+.auth-modal {
+  position: relative;
+  width: min(100%, 430px);
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 32px;
+  border: 1px solid rgba(49, 155, 104, 0.35);
+  border-radius: 12px;
+  background: #0d100e;
+  box-shadow: 0 25px 90px rgba(0, 0, 0, 0.55);
+}
+
+.auth-close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: 6px;
+  color: #aab2ab;
+  background: transparent;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.auth-close:hover {
+  color: white;
+  background: #202620;
+}
+
+.auth-modal h2 {
+  margin: 0 30px 8px 0;
+  font-size: 26px;
+  letter-spacing: -0.5px;
+}
+
+.auth-description {
+  margin: 0 0 24px;
+  color: #929a92;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.auth-form {
+  display: grid;
+  gap: 14px;
+}
+
+.auth-field {
+  display: grid;
+  gap: 7px;
+  color: #c6cdc6;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.auth-field input {
+  width: 100%;
+  min-height: 44px;
+  padding: 0 12px;
+  border: 1px solid #303831;
+  border-radius: 5px;
+  outline: none;
+  color: #f4f5f0;
+  background: #151a17;
+  font-size: 13px;
+}
+
+.auth-field input:focus {
+  border-color: #319b68;
+}
+
+.auth-submit,
+.auth-google {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 44px;
+  border-radius: 5px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.auth-submit {
+  margin-top: 4px;
+  border: 1px solid #319b68;
+  color: #07110b;
+  background: #319b68;
+}
+
+.auth-submit:hover {
+  background: #45b47c;
+}
+
+.auth-submit:disabled {
+  cursor: wait;
+  opacity: 0.6;
+}
+
+.auth-google {
+  border: 1px solid #303831;
+  color: #f4f5f0;
+  background: #151a17;
+}
+
+.auth-google:hover {
+  border-color: #319b68;
+}
+
+.auth-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 18px 0;
+  color: #737a73;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+  flex: 1;
+  height: 1px;
+  background: #303831;
+  content: "";
+}
+
+.auth-link {
+  padding: 0;
+  border: 0;
+  color: #54c58a;
+  background: transparent;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.auth-link:hover {
+  text-decoration: underline;
+}
+
+.auth-footer {
+  margin: 20px 0 0;
+  color: #929a92;
+  text-align: center;
+  font-size: 12px;
+}
+
+.auth-message {
+  margin: 14px 0 0;
+  color: #54c58a;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.auth-message.error {
+  color: #ff8585;
+}
+
+.auth-password-hint {
+  color: #899289;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+@media (max-width: 700px) {
+  .auth-actions {
+    gap: 6px;
+  }
+
+  .auth-button {
+    min-height: 35px;
+    padding: 0 10px;
+    font-size: 11px;
+  }
+
+  .auth-modal {
+    padding: 26px 20px;
+  }
+}
+
+
+/* ===== ANGKOR STREAM ACCOUNT DROPDOWN ===== */
+
+.account-dropdown {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.account-dropdown [data-account-menu] {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  cursor: pointer;
+  color: #e9f5ed;
+  background: #101813;
+  border: 1px solid #28563b;
+  border-radius: 9px;
+  padding: 11px 15px;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.account-dropdown [data-account-menu]:hover {
+  background: #17291e;
+  border-color: #36b875;
+}
+
+.account-menu[hidden] {
+  display: none !important;
+}
+
+.account-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  width: 245px;
+  padding: 8px;
+  gap: 3px;
+  background: #0b100d;
+  border: 1px solid #244a34;
+  border-radius: 12px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.55);
+}
+
+.account-menu button {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 42px;
+  padding: 11px 13px;
+  color: #dce9e0;
+  text-align: left;
+  font: inherit;
+  font-size: 13px;
+  background: transparent;
+  border: 0;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.account-menu button:hover {
+  color: #6be69c;
+  background: #17291e;
+}
+
+.account-menu button[data-auth-logout] {
+  margin-top: 5px;
+  border-top: 1px solid #26392d;
+  border-radius: 0 0 7px 7px;
+  color: #f09a9a;
+}
+
+.account-menu button[data-auth-logout]:hover {
+  background: #2a1717;
+  color: #ffb2b2;
+}
+
+
+/* ===== ANGKOR STREAM ACCOUNT PAGES ===== */
+
+.account-page {
+  min-height: calc(100vh - 80px);
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  gap: 40px;
+  padding: 48px clamp(20px, 6vw, 96px) 80px;
+  color: #f4f7f5;
+  background:
+    radial-gradient(ellipse at 80% 0%, rgba(25, 120, 76, 0.12), transparent 38%),
+    #080b09;
+}
+
+.account-sidebar {
+  position: sticky;
+  top: 24px;
+  align-self: start;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px 12px;
+  border: 1px solid rgba(76, 190, 128, 0.16);
+  border-radius: 18px;
+  background: #0d120f;
+}
+
+.account-sidebar-heading {
+  padding: 8px 12px 16px;
+  color: #6e9b80;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.account-nav-item {
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: transparent;
+  color: #a8b5ac;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.account-nav-item:hover,
+.account-nav-item.active {
+  border-color: rgba(52, 185, 116, 0.22);
+  background: rgba(43, 156, 96, 0.12);
+  color: #56d995;
+}
+
+.account-back-home {
+  margin-top: 12px;
+  border-top: 1px solid #202b24;
+  border-radius: 0;
+  padding-top: 20px;
+}
+
+.account-content {
+  min-width: 0;
+  max-width: 1000px;
+}
+
+.account-content > h1 {
+  margin: 12px 0 28px;
+  font-size: clamp(32px, 4vw, 48px);
+  letter-spacing: -0.04em;
+}
+
+.account-content .eyebrow {
+  color: #55ce91;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+}
+
+.profile-card,
+.account-empty-state {
+  padding: clamp(22px, 4vw, 40px);
+  border: 1px solid rgba(88, 190, 129, 0.18);
+  border-radius: 20px;
+  background: linear-gradient(145deg, #111a14, #0b0f0c 75%);
+  box-shadow: 0 20px 70px rgba(0, 0, 0, 0.2);
+}
+
+.profile-card-heading h2,
+.account-empty-state h2 {
+  margin: 0 0 8px;
+  font-size: 25px;
+}
+
+.profile-card-heading p,
+.account-empty-state p {
+  margin: 0;
+  color: #8e9d92;
+  line-height: 1.7;
+}
+
+.profile-avatar-large {
+  display: grid;
+  place-items: center;
+  width: 132px;
+  height: 132px;
+  margin: 28px 0;
+  overflow: hidden;
+  border: 3px solid #2caa6a;
+  border-radius: 50%;
+  background: #14271b;
+  box-shadow: 0 0 36px rgba(44, 170, 106, 0.15);
+}
+
+.profile-avatar-large img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-avatar-large > span {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  color: white;
+  font-size: 48px;
+}
+
+.profile-avatar-placeholder {
+  background: #14271b;
+}
+
+.profile-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.profile-form > label:not(.profile-upload) {
+  margin-top: 8px;
+  color: #dce6df;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+#profile-username {
+  width: min(100%, 420px);
+  min-height: 46px;
+  padding: 12px 14px;
+  border: 1px solid #2b3d30;
+  border-radius: 10px;
+  outline: none;
+  background: #080d09;
+  color: #f4f7f5;
+  font: inherit;
+}
+
+#profile-username:focus {
+  border-color: #38bc79;
+  box-shadow: 0 0 0 3px rgba(56, 188, 121, 0.12);
+}
+
+.profile-form h3 {
+  margin: 26px 0 4px;
+  font-size: 17px;
+}
+
+.zodiac-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(70px, 1fr));
+  gap: 12px;
+  width: 100%;
+  max-width: 650px;
+}
+
+.zodiac-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 88px;
+  padding: 10px 5px;
+  border: 1px solid #29372d;
+  border-radius: 12px;
+  background: #0b100c;
+  color: #d8e5dc;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.zodiac-option > span {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--avatar-color);
+  color: white;
+  font-size: 20px;
+}
+
+.zodiac-option small {
+  font-size: 11px;
+}
+
+.zodiac-option:hover,
+.zodiac-option.selected {
+  border-color: #46d38a;
+  background: rgba(42, 158, 93, 0.15);
+  transform: translateY(-2px);
+}
+
+.profile-upload {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  margin-top: 14px;
+  padding: 10px 16px;
+  border: 1px solid #345540;
+  border-radius: 10px;
+  background: #111a14;
+  color: #bce8cd;
+  cursor: pointer;
+}
+
+.profile-upload input {
+  display: block;
+  width: 100%;
+  max-width: 240px;
+  margin-left: 12px;
+  font-size: 12px;
+}
+
+.account-primary,
+.account-secondary {
+  min-height: 44px;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.account-primary {
+  margin-top: 12px;
+  border: 1px solid #37b976;
+  background: #2ca66a;
+  color: #041009;
+}
+
+.account-primary:hover {
+  background: #49d18b;
+  transform: translateY(-1px);
+}
+
+.account-primary:disabled {
+  opacity: 0.6;
+  cursor: wait;
+  transform: none;
+}
+
+.account-secondary {
+  border: 1px solid #344239;
+  background: transparent;
+  color: #c2d0c6;
+}
+
+.account-secondary:hover {
+  border-color: #4bbd80;
+  color: #65dc9c;
+}
+
+.profile-message {
+  min-height: 20px;
+  color: #6fda9d;
+  font-size: 13px;
+}
+
+.account-empty-state {
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.account-empty-icon {
+  margin-bottom: 18px;
+  color: #4cd38c;
+  font-size: 36px;
+}
+
+/* Responsive account pages */
+@media (max-width: 900px) {
+  .account-page {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 28px 20px 56px;
+  }
+
+  .account-sidebar {
+    position: static;
+    padding: 12px;
+  }
+
+  .account-sidebar-heading {
+    padding-bottom: 8px;
+  }
+
+  .account-sidebar .account-nav-item {
+    width: 100%;
+  }
+
+  .zodiac-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .account-page {
+    padding: 22px 14px 40px;
+  }
+
+  .profile-card,
+  .account-empty-state {
+    padding: 20px 16px;
+    border-radius: 15px;
+  }
+
+  .profile-avatar-large {
+    width: 108px;
+    height: 108px;
+  }
+
+  .zodiac-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .zodiac-option {
+    min-height: 78px;
+  }
+
+  .profile-upload {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .profile-upload input {
+    margin-left: 0;
+  }
+}
+
+
+/* ===== ANGKOR STREAM SHARED HEADER ===== */
+
+
+/* ===== ANGKOR STREAM HEADER LAYOUT ===== */
+
+.site-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  min-height: 76px;
+  padding: 12px 3%;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.site-topbar .brand {
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+  margin-right: auto;
+}
+
+.site-topbar .brand-logo {
+  display: block;
+  width: 170px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Group navigation, search, and account on the right */
+.site-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+  margin-left: 0;
+  flex: 0 0 auto;
+}
+
+.site-navigation .site-nav-link {
+  appearance: none;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  color: #d6ded8;
+  padding: 9px 11px;
+  font: inherit;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.site-navigation .site-nav-link:hover,
+.site-navigation .site-nav-link.active {
+  color: #56d69a;
+  background: rgba(38, 173, 108, 0.12);
+  border-color: rgba(38, 173, 108, 0.25);
+}
+
+.site-search {
+  flex: 0 1 260px;
+  width: 260px;
+  min-width: 160px;
+  max-width: 260px;
+}
+
+/* Keep the account control compact */
+.site-header-account {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  margin-left: 0;
+}
+
+/* Tablet and mobile */
+@media (max-width: 900px) {
+  .site-topbar {
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 12px 4%;
+  }
+
+  .site-topbar .brand-logo {
+    width: 150px;
+  }
+
+  .site-navigation {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  .site-navigation .site-nav-link {
+    padding: 9px 12px;
+    font-size: 13px;
+  }
+
+  .site-search {
+    flex: 1 1 180px;
+    width: auto;
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .site-header-account {
+    flex: 0 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-topbar .brand-logo {
+    width: 130px;
+  }
+
+  .site-navigation .site-nav-link {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+}
+
+
+.header-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  vertical-align: middle;
+  margin-right: 8px;
+  background: #173b2b;
+  border: 1px solid rgba(86, 214, 154, 0.5);
+}
+
+.header-avatar-zodiac,
+.header-avatar-default {
+  font-size: 17px;
+}
+
+
+/* Profile avatar upload feedback */
+#profile-message {
+  display: block;
+  margin-top: 10px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+#profile-message.upload-warning {
+  color: #ff6b6b;
+}
+
+#profile-message.upload-success {
+  color: #56d69a;
+}
+
+.profile-avatar-large {
+  cursor: pointer;
+}
+
+
+/* ===== CLEAN ANGKOR STREAM HEADER ===== */
+
+.site-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  min-height: 82px;
+  padding: 14px 4%;
+  box-sizing: border-box;
+}
+
+
+.site-topbar .brand {
+  justify-self: start;
+  min-width: 0;
+}
+
+.site-topbar .brand-logo {
+  display: block;
+  width: 190px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+
+.site-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+  flex: 0 0 auto;
+  margin: 0;
+  white-space: nowrap;
+}
+
+
+.site-navigation .site-nav-link {
+  padding: 10px 16px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: transparent;
+  color: #d6ded8;
+  font: inherit;
+  cursor: pointer;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.site-navigation .site-nav-link:hover,
+.site-navigation .site-nav-link.active {
+  color: #56d69a;
+  background: rgba(38, 173, 108, 0.12);
+  border-color: rgba(38, 173, 108, 0.22);
+}
+
+.site-search {
+  display: flex;
+  align-items: center;
+  flex: 0 1 230px;
+  width: 230px;
+  min-width: 180px;
+  max-width: 230px;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+.site-search input {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.site-search-placeholder {
+  display: block;
+  width: 100%;
+  max-width: 250px;
+  justify-self: end;
+}
+
+.site-header-account {
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Leave room for the account control */
+.site-topbar:has(.site-header-account) {
+  padding-right: 190px;
+}
+
+@media (max-width: 900px) {
+  .site-topbar {
+    grid-template-columns: 1fr auto;
+    gap: 14px;
+    padding: 12px 4%;
+  }
+
+  .site-topbar .brand-logo {
+    width: 155px;
+  }
+
+  .site-navigation {
+    justify-self: end;
+    gap: 2px;
+  }
+
+  .site-navigation .site-nav-link {
+    padding: 9px 10px;
+  }
+
+  .site-topbar:has(.site-header-account) {
+    padding-right: 4%;
+  }
+
+  .site-header-account {
+    position: static;
+    transform: none;
+    justify-self: end;
+  }
+
+  .site-search,
+  .site-search-placeholder {
+    grid-column: 1 / -1;
+    justify-self: stretch;
+    max-width: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-topbar {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .site-topbar .brand,
+  .site-navigation,
+  .site-header-account {
+    justify-self: center;
+  }
+
+  .site-navigation {
+    flex-wrap: wrap;
+  }
+}
+
+
+
+
+
+/* FINAL HEADER SPACING FIX */
+
+.topbar {
+  display: grid !important;
+  grid-template-columns: 190px max-content 190px max-content !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  column-gap: 24px !important;
+  padding: 12px 3% !important;
+  box-sizing: border-box !important;
+}
+
+
+.topbar .brand {
+  width: 190px !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+}
+
+
+.topbar .nav-links {
+  display: flex !important;
+  justify-content: flex-start !important;
+  gap: 16px !important;
+  min-width: max-content !important;
+  margin: 0 !important;
+}
+
+
+.topbar .search-box {
+  width: 190px !important;
+  min-width: 0 !important;
+  max-width: 190px !important;
+  margin: 0 !important;
+}
+.topbar .auth-actions {
+  display: flex !important;
+  align-items: center !important;
+  justify-self: start !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+}
+
+@media (max-width: 900px) {
+  .topbar {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 12px !important;
+    row-gap: 12px !important;
+  }
+
+  .topbar .brand {
+    width: 150px !important;
+    flex: 0 0 150px !important;
+  }
+
+  .topbar .nav-links {
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+  }
+
+  .topbar .search-box {
+    flex: 1 1 180px !important;
+    width: auto !important;
+    max-width: none !important;
+  }
+}
+
+
+/* ===== ANGKOR STREAM: ACTUAL HEADER FIX ===== */
+
+header.topbar {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  flex-wrap: nowrap !important;
+  gap: 18px !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  padding: 12px 3% !important;
+}
+
+header.topbar > .brand {
+  flex: 0 0 auto !important;
+  margin: 0 auto 0 0 !important;
+}
+
+header.topbar .brand img,
+header.topbar .brand .brand-logo {
+  width: 170px !important;
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+header.topbar > .nav-links {
+  display: flex !important;
+  flex: 0 0 auto !important;
+  align-items: center !important;
+  gap: 12px !important;
+  margin: 0 !important;
+}
+
+header.topbar > .search-box {
+  display: flex !important;
+  flex: 0 1 260px !important;
+  width: 260px !important;
+  min-width: 150px !important;
+  max-width: 260px !important;
+  margin: 0 !important;
+}
+
+header.topbar > .auth-actions {
+  display: flex !important;
+  flex: 0 0 auto !important;
+  align-items: center !important;
+  margin: 0 !important;
+}
+
+/* Smaller screens */
+@media (max-width: 900px) {
+  header.topbar {
+    flex-wrap: wrap !important;
+    gap: 12px !important;
+  }
+
+  header.topbar > .brand {
+    margin-right: auto !important;
+  }
+
+  header.topbar > .nav-links {
+    order: 3 !important;
+    width: 100% !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+  }
+
+  header.topbar > .search-box {
+    flex: 1 1 180px !important;
+    width: auto !important;
+    max-width: 100% !important;
+  }
+}
+
+
+/* ===== ANGKOR STREAM SEARCH DROPDOWN ===== */
+
+.topbar .search-wrap {
+  position: relative;
+  flex: 0 0 260px;
+  width: 260px;
+  min-width: 0;
+  z-index: 1000;
+}
+
+.topbar .search-box {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.topbar .search-box input {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+/* Floating dropdown, directly below the search bar */
+.topbar .search-suggestions {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  width: 340px;
+  max-width: min(340px, 85vw);
+  max-height: 380px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px;
+  box-sizing: border-box;
+  background: #0b100d;
+  border: 1px solid rgba(86, 214, 154, 0.3);
+  border-radius: 12px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.65);
+  z-index: 9999;
+}
+
+.topbar .search-suggestions[hidden] {
+  display: none !important;
+}
+
+.topbar .suggestion-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-width: 0;
+  padding: 10px;
+  color: #edf5ef;
+  text-align: left;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  font: inherit;
+  box-sizing: border-box;
+}
+
+.topbar .suggestion-item:hover,
+.topbar .suggestion-item:focus-visible {
+  background: rgba(38, 173, 108, 0.14);
+  border-color: rgba(86, 214, 154, 0.3);
+  outline: none;
+}
+
+.topbar .suggestion-poster {
+  display: flex;
+  flex: 0 0 42px;
+  width: 42px;
+  height: 58px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  background: linear-gradient(
+    145deg,
+    var(--poster-color, #183b2b),
+    #101612
+  );
+  font-size: 24px;
+}
+
+.topbar .suggestion-info {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.topbar .suggestion-title {
+  color: #f3f7f4;
+  font-size: 14px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.topbar .suggestion-meta {
+  color: #9baaa0;
+  font-size: 12px;
+}
+
+.topbar .suggestion-arrow {
+  color: #56d69a;
+  flex: 0 0 auto;
+}
+
+@media (max-width: 700px) {
+  .topbar .search-wrap {
+    flex: 1 1 180px;
+    width: auto;
+    min-width: 0;
+  }
+
+  .topbar .search-suggestions {
+    width: min(340px, 90vw);
+    max-width: 90vw;
+  }
+}

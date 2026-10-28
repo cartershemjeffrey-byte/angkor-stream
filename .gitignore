@@ -5,3 +5,9 @@ dist/
 !.env.example
 .DS_Store
 Thumbs.db
+# Keep local movie files out of GitHub
+*.mp4
+*.mkv
+*.avi
+*.mov
+*.srt
